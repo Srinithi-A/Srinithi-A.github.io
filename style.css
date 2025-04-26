@@ -1,0 +1,255 @@
+/* Vintage Theme Variables */
+:root {
+    --vintage-dark: #2A2118;
+    --vintage-light: #F5E9D9;
+    --vintage-accent: #D4A373;
+    --vintage-secondary: #8B5A2B;
+    --vintage-text: #5C4D3D;
+    --vintage-paper: #F0E5D3;
+    --vintage-border: #C4B6A0;
+    --vintage-error: #8B2E2E;
+}
+
+/* Vintage Base Styles */
+body.vintage-theme {
+    font-family: 'EB Garamond', serif;
+    background-color: var(--vintage-dark);
+    color: var(--vintage-text);
+    line-height: 1.6;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    min-height: 100vh;
+}
+
+.vintage-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 33, 24, 0.7);
+    z-index: -2;
+}
+
+.vintage-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+    opacity: 0.15;
+    z-index: -1;
+}
+
+/* Vintage Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Vintage Header */
+.vintage-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--vintage-accent);
+}
+
+.vintage-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: var(--vintage-light);
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+}
+
+.vintage-header .subtitle {
+    color: var(--vintage-accent);
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+/* Vintage Activity Cards */
+.vintage-hub {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vintage-card {
+    background-color: var(--vintage-paper);
+    border-radius: 4px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--vintage-border);
+}
+
+.vintage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.vintage-card .card-icon {
+    font-size: 2.5rem;
+    color: var(--vintage-secondary);
+    margin-bottom: 1rem;
+}
+
+.vintage-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--vintage-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.vintage-card p {
+    color: var(--vintage-text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.vintage-card-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--vintage-accent), var(--vintage-secondary));
+    transition: all 0.3s ease;
+}
+
+.vintage-card:hover .vintage-card-border {
+    height: 6px;
+}
+
+/* Vintage Chatbot Styles */
+.vintage-chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: var(--vintage-paper);
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid var(--vintage-border);
+}
+
+.vintage-chatbot-header {
+    background-color: var(--vintage-secondary);
+    color: var(--vintage-light);
+    padding: 12px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--vintage-dark);
+}
+
+.vintage-chatbot-toggle {
+    font-size: 1.3rem;
+}
+
+.vintage-chatbot-body {
+    display: none;
+    height: 350px;
+    flex-direction: column;
+    background-color: var(--vintage-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+    opacity: 0.9;
+}
+
+.vintage-chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.vintage-chatbot-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.vintage-bot-message {
+    background-color: var(--vintage-light);
+    color: var(--vintage-text);
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+    border: 1px solid var(--vintage-border);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.vintage-user-message {
+    background-color: var(--vintage-secondary);
+    color: var(--vintage-light);
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.vintage-chatbot-input {
+    display: flex;
+    padding: 10px;
+    background-color: var(--vintage-light);
+    border-top: 1px solid var(--vintage-border);
+}
+
+.vintage-chatbot-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--vintage-border);
+    border-radius: 4px;
+    margin-right: 5px;
+    background-color: var(--vintage-paper);
+    color: var(--vintage-text);
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+}
+
+.vintage-chatbot-input button {
+    padding: 8px 12px;
+    background-color: var(--vintage-secondary);
+    color: var(--vintage-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vintage-chatbot-input button:hover {
+    background-color: var(--vintage-accent);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .vintage-hub {
+        grid-template-columns: 1fr;
+    }
+    
+    .vintage-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .vintage-chatbot-container {
+        width: 280px;
+        right: 10px;
+    }
+}
